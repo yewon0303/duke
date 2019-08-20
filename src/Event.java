@@ -1,7 +1,7 @@
 public class Event extends Task {
     //Task of type Event
     //starts at a specific time and ends at a specific time
-    public String at;
+    protected String at;
 
     public Event(String[] parsedTask) {
         //index 0 carry task

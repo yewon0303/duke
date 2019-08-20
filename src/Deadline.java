@@ -1,7 +1,7 @@
 public class Deadline extends Task {
     //Task of type Deadline
     //to be done before a specific date/time
-    public String by;
+    protected String by;
 
     public Deadline(String[] parsedTask) {
         //index 0 carry task

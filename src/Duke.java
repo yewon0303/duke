@@ -3,11 +3,12 @@ import java.util.LinkedList;
 
 public class Duke {
     private static LinkedList<Task> commands = new LinkedList<>();
+    private static String horizontalLine =  "    ____________________________________________________________";
 
     private void greeting() {
-        System.out.println("    ____________________________________________________________");
+        System.out.println(horizontalLine);
         System.out.println("    Hello! I'm Duke\n    What can I do for you?");
-        System.out.println("    ____________________________________________________________");
+        System.out.println(horizontalLine);
         System.out.println();
     }
 
@@ -56,36 +57,35 @@ public class Duke {
     private void addNow(Task newTask) {
         commands.add(newTask); //add new Task to the list of tasks
         //echo the command entered by the user
-        System.out.println("    ____________________________________________________________\n" +
-                "     Got it. I've added this task:");
-        System.out.println(newTask);
+        System.out.println(horizontalLine + "\n     Got it. I've added this task:");
+        System.out.println("       " + newTask);
         System.out.println("     Now you have " + commands.size() + " tasks in the list.");
-        System.out.println("    ____________________________________________________________\n");
+        System.out.println(horizontalLine + "\n");
     }
 
     private void listAll(LinkedList<Task> commands) {
-        System.out.println("    ____________________________________________________________");
+        System.out.println(horizontalLine);
         System.out.println("    Here are the tasks in your list:");
         for (int i = 0; i < commands.size(); i++) {
             System.out.println("    " + (i + 1) + "." + commands.get(i));
         }
-        System.out.println("    ____________________________________________________________");
+        System.out.println(horizontalLine);
     }
 
     private void done(int doneTask) {
         Task now = commands.get(doneTask - 1);
         now.markDone();
-        System.out.println("    ____________________________________________________________");
+        System.out.println(horizontalLine);
         System.out.println("    Nice! I've marked this task as done:");
         System.out.println("    " + now);
-        System.out.println("    ____________________________________________________________");
+        System.out.println(horizontalLine);
     }
 
     private void bye() {
         //exit when the user types bye
-        System.out.println("    ____________________________________________________________");
+        System.out.println(horizontalLine);
         System.out.println("    Bye. Hope to see you again soon!");
-        System.out.println("    ____________________________________________________________");
+        System.out.println(horizontalLine);
         System.out.println();
     }
 
