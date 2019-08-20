@@ -1,8 +1,10 @@
 public class Task {
+    public String type; //Todo, Deadline, Event
     public String task;
     private boolean done;
 
-    public Task(String task) {
+    public Task(String type, String task) {
+        this.type = type;
         this.task = task;
         this.done = false;
     }

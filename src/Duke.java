@@ -31,23 +31,43 @@ public class Duke {
                 int doneTask = Integer.parseInt(parsed[1]);
                 done(doneTask);
             } else {
-                //add command to the list of commands
-                Task newTask = new Task(command);
-                commands.add(newTask);
-                //echo the command entered by the user
-                System.out.println("    ____________________________________________________________");
-                System.out.println("    added: " + command);
-                System.out.println("    ____________________________________________________________");
-                System.out.println();
+                //new task created
+                switch(parsed[0]) {
+                    case "todo": //create todo Task
+                                Todo newTodo = new Todo(command.substring(5));
+                                addNow(newTodo);
+                                break;
+                    case "deadline": //create deadline Task
+                                    String[] parsedTask = command.substring(9).split("/");
+                                    Deadline newDeadline = new Deadline(parsedTask);
+                                    addNow(newDeadline);
+                                    break;
+                    case "event": //create event Task
+                                String[] parsedTask1 = command.substring(6).split("/");
+                                Event newEvent = new Event(parsedTask1);
+                                addNow(newEvent);
+                                break;
+                    default: break;
+                }
             }
         }
+    }
+
+    private void addNow(Task newTask) {
+        commands.add(newTask); //add new Task to the list of tasks
+        //echo the command entered by the user
+        System.out.println("    ____________________________________________________________\n" +
+                "     Got it. I've added this task:");
+        System.out.println(newTask);
+        System.out.println("     Now you have " + commands.size() + " tasks in the list.");
+        System.out.println("    ____________________________________________________________\n");
     }
 
     private void listAll(LinkedList<Task> commands) {
         System.out.println("    ____________________________________________________________");
         System.out.println("    Here are the tasks in your list:");
         for (int i = 0; i < commands.size(); i++) {
-            System.out.println("    " + (i + 1) + ". " + commands.get(i));
+            System.out.println("    " + (i + 1) + "." + commands.get(i));
         }
         System.out.println("    ____________________________________________________________");
     }
