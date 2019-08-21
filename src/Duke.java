@@ -103,13 +103,17 @@ public class Duke {
         System.out.println(horizontalLine);
     }
 
-    private void done(int doneTask) {
-        Task now = commands.get(doneTask - 1);
-        now.markDone();
-        System.out.println(horizontalLine);
-        System.out.println("    Nice! I've marked this task as done: ");
-        System.out.println("    " + now);
-        System.out.println(horizontalLine);
+    private void done(int doneTask) throws DukeException {
+        try {
+            Task now = commands.get(doneTask - 1);
+            now.markDone();
+            System.out.println(horizontalLine);
+            System.out.println("    Nice! I've marked this task as done: ");
+            System.out.println("    " + now);
+            System.out.println(horizontalLine);
+        } catch (IndexOutOfBoundsException ex) {
+            throw new DukeException("The task you want to mark done does not exist.");
+        }
     }
 
     private void deleteTask(int wantDelete) throws DukeException {
