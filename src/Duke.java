@@ -1,8 +1,8 @@
 import java.util.Scanner;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Duke {
-    private static LinkedList<Task> commands = new LinkedList<>();
+    private static ArrayList<Task> commands = new ArrayList<>(100);
     private static String horizontalLine =  "    ____________________________________________________________";
 
     private void greeting() {
@@ -56,13 +56,22 @@ public class Duke {
                                 addNow(newEvent);
                                 break;
                             }
-                        case "done": //mark event as done
+                        case "done": //mark event as done by the task index
                             if (parsed.length != 2) {
                                 throw new DukeException("Please enter in the format done [task index]");
                             } else {
                                 int doneTask = Integer.parseInt(parsed[1]);
                                 done(doneTask);
+                                break;
                             }
+                        case "delete": //delete a task by the task index
+                                    if (parsed.length!= 2) {
+                                        throw new DukeException("Please enter in the format delete [task index]");
+                                    } else {
+                                        int wantDelete = Integer.parseInt(parsed[1]) - 1;
+                                        deleteTask(wantDelete);
+                                        break;
+                                    }
                         default: throw new DukeException("I'm sorry, but I don't know what that means :-(");
                     }
                 }
@@ -85,7 +94,7 @@ public class Duke {
         System.out.println(horizontalLine + "\n");
     }
 
-    private void listAll(LinkedList<Task> commands) {
+    private void listAll(ArrayList<Task> commands) {
         System.out.println(horizontalLine);
         System.out.println("    Here are the tasks in your list: ");
         for (int i = 0; i < commands.size(); i++) {
@@ -101,6 +110,18 @@ public class Duke {
         System.out.println("    Nice! I've marked this task as done: ");
         System.out.println("    " + now);
         System.out.println(horizontalLine);
+    }
+
+    private void deleteTask(int wantDelete) throws DukeException {
+        try {
+            Task taskToDelete = commands.remove(wantDelete);
+            System.out.println(horizontalLine + "\n     Noted. I've removed this task:");
+            System.out.println("       " + taskToDelete);
+            System.out.println("     Now you have " + commands.size() + " tasks in the list.");
+            System.out.println(horizontalLine + "\n");
+        } catch (IndexOutOfBoundsException ex) {
+            throw new DukeException("The task you want to delete does not exist.");
+        }
     }
 
     private void bye() {
