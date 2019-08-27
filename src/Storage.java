@@ -12,16 +12,10 @@ public class Storage {
     public static final String DEFAULT_STORAGE_PATH = "../src/dukeTaskList.txt";
 
     public Storage() {
-        //this(DEFAULT_STORAGE_PATH);
     }
 
     public ArrayList<Task> load() throws DukeException {
         ArrayList<Task> rtn = new ArrayList<>();
-        //no prior data found in hard drive
-        //if (!Files.exists(DEFAULT_STORAGE_PATH)) {
-            //return the new ArrayList<Task>
-        //}
-        //prior data found in hard drive
         try {
             File file = new File(DEFAULT_STORAGE_PATH);
             Scanner scn = new Scanner(file);

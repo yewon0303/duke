@@ -22,15 +22,20 @@ public class Deadline extends Task {
         }
     }
 
+    public Deadline(boolean isDone, String task, String by) throws DukeException {
+        super(isDone, "Deadline", task);
+        this.by = by;
+        try {
+            this.date = input.parse(by);
+        } catch (ParseException pe) {
+            throw new DukeException("Parsing error detected.");
+        }
+    }
+
     private String printDate() {
         Format formatter = new SimpleDateFormat("dd MMMM yyyy hh.mmaa");
         String dateFormatted = formatter.format(this.date);
         return dateFormatted;
-    }
-
-    public Deadline(boolean isDone, String task, String by) {
-        super(isDone, "Deadline", task);
-        this.by = by;
     }
 
     @Override

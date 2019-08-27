@@ -22,15 +22,20 @@ public class Event extends Task {
         }
     }
 
+    public Event(boolean isDone, String task, String at) throws DukeException {
+        super(isDone, "Event", task);
+        this.at = at;
+        try {
+            this.date = input.parse(at);
+        } catch (ParseException pe) {
+            throw new DukeException("Parsing error detected.");
+        }
+    }
+
     private String printDate() {
         Format formatter = new SimpleDateFormat("dd MMMM yyyy hh.mmaa");
         String dateFormatted = formatter.format(this.date);
         return dateFormatted;
-    }
-
-    public Event(boolean isDone, String task, String at) {
-        super(isDone, "Event", task);
-        this.at = at;
     }
 
     @Override

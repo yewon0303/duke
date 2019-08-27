@@ -1,5 +1,6 @@
 T | 1 | read book
-D | 1 | return book | June 6th
-E | 0 | project meeting | Aug 6th 2-4pm
-T | 1 | join sports club
+D | 1 | return book | 6/6/2019 1800
+E | 1 | project meeting | 6/8/2019 1400
+T | 0 | join sports club
 T | 0 | eat dinner
+D | 0 | play tennis  |  2/2/2019 2000

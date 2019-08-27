@@ -1,10 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-<<<<<<< HEAD
 import java.io.IOException;
-=======
 import java.text.ParseException;
->>>>>>> branch-Level-8
 
 public class Duke {
     private static ArrayList<Task> commands;
