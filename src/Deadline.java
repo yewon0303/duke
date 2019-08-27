@@ -10,6 +10,16 @@ public class Deadline extends Task {
         this.by = parsedTask[1].substring(3); //without "/by "
     }
 
+    public Deadline(boolean isDone, String task, String by) {
+        super(isDone, "Deadline", task);
+        this.by = by;
+    }
+
+    @Override
+    public String saveTask() {
+        return "D" + super.saveTask() + " | " + this.by;
+    }
+
     @Override
     public String toString() {
         return " [D]" + super.toString() + " (by: " + this.by + ")";

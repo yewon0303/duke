@@ -10,6 +10,16 @@ public class Event extends Task {
         this.at = parsedTask[1].substring(3); //without "/at "
     }
 
+    public Event(boolean isDone, String task, String at) {
+        super(isDone, "Event", task);
+        this.at = at;
+    }
+
+    @Override
+    public String saveTask() {
+        return "E" + super.saveTask() + " | " + this.at;
+    }
+
     @Override
     public String toString() {
         return " [E]" + super.toString() + " (at: " + this.at + ")";
