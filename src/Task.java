@@ -1,29 +1,46 @@
 public class Task {
     public String type; //Todo, Deadline, Event
     public String task;
-    private boolean done;
+    private boolean isDone;
 
     public Task(String type, String task) {
         this.type = type;
         this.task = task;
-        this.done = false;
+        this.isDone = false;
     }
 
-    public void markDone() {
-        this.done = true;
+    public Task(boolean isDone, String type, String task) {
+        this.isDone = isDone;
+        this.type = type;
+        this.task = task;
     }
 
-    public boolean checkDone() {
-        return this.done;
+    public void markIsDone() {
+        this.isDone = true;
     }
 
-    private String displayDone() {
-        return this.done ? "[" + "\u2713" + "] " //done
-                         : "[" + "\u2718" + "] "; //not done
+    public boolean checkIsDone() {
+        return this.isDone;
+    }
+
+    private String displayIsDone() {
+        return this.isDone
+                ? "[" + "\u2713" + "] " //done
+                : "[" + "\u2718" + "] "; //not done
+    }
+
+    private String isDoneInt(boolean isDone) {
+        return isDone ? "1" : "0";
+    }
+
+    //for saving the task into hard disc
+    public String saveTask() {
+        return String.format(" | " + isDoneInt(this.isDone) +
+                " | " + this.task);
     }
 
     @Override
     public String toString() {
-            return String.format(this.displayDone() + this.task);
+            return String.format(this.displayIsDone() + this.task);
     }
 }

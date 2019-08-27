@@ -1,9 +1,11 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.IOException;
 
 public class Duke {
-    private static ArrayList<Task> commands = new ArrayList<>(100);
+    private static ArrayList<Task> commands;
     private static String horizontalLine =  "    ____________________________________________________________";
+    private static Storage storage = new Storage();
 
     private void greeting() {
         System.out.println(horizontalLine);
@@ -11,9 +13,8 @@ public class Duke {
         System.out.println(horizontalLine + "\n");
     }
 
-    private void commandHandler() {
+    private void commandHandler() throws DukeException {
         Scanner scn = new Scanner(System.in);
-        //assume no more than 100 tasks
         boolean carryOn = true;
             while (carryOn) {
                 String command = scn.nextLine();
@@ -82,7 +83,13 @@ public class Duke {
                 System.out.println(horizontalLine + "\n");
                 continue;
             }
-        }
+                try {
+                    storage.update(commands);
+                } catch (IOException ioe) {
+                    throw new DukeException("There is an error!");
+                }
+
+            }
     }
 
     private void addNow(Task newTask) {
@@ -106,7 +113,7 @@ public class Duke {
     private void done(int doneTask) throws DukeException {
         try {
             Task now = commands.get(doneTask - 1);
-            now.markDone();
+            now.markIsDone();
             System.out.println(horizontalLine);
             System.out.println("    Nice! I've marked this task as done: ");
             System.out.println("    " + now);
@@ -136,7 +143,7 @@ public class Duke {
         System.out.println();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DukeException {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -146,6 +153,7 @@ public class Duke {
 
         Duke duke = new Duke();
         duke.greeting();
+        commands = storage.load();
         duke.commandHandler();
     }
 }
