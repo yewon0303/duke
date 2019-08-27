@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.text.ParseException;
 
 public class Duke {
     private static ArrayList<Task> commands = new ArrayList<>(100);
@@ -39,18 +40,18 @@ public class Duke {
                             addNow(newTodo);
                             break;
                         case "deadline": //create deadline Task
-                            String[] parsedTask = command.substring(9).split("/");
+                            String[] parsedTask = command.substring(9).split("/by");
                             if (parsedTask.length != 2) {
-                                throw new DukeException("Please enter deadline in the format /deadline");
+                                throw new DukeException("Please enter deadline in the format /by [deadline]");
                             } else {
                                 Deadline newDeadline = new Deadline(parsedTask);
                                 addNow(newDeadline);
                                 break;
                             }
                         case "event": //create event Task
-                            String[] parsedTask1 = command.substring(6).split("/");
+                            String[] parsedTask1 = command.substring(6).split("/at");
                             if (parsedTask1.length != 2) {
-                                throw new DukeException("Please enter date or time in the format /date or time");
+                                throw new DukeException("Please enter date or time in the format /at [date or time]");
                             } else {
                                 Event newEvent = new Event(parsedTask1);
                                 addNow(newEvent);
