@@ -14,7 +14,7 @@ public class Storage {
     public Storage() {
     }
 
-    public ArrayList<Task> load() throws DukeException {
+    public TaskList load() {
         ArrayList<Task> rtn = new ArrayList<>();
         try {
             File file = new File(DEFAULT_STORAGE_PATH);
@@ -24,9 +24,11 @@ public class Storage {
                 rtn.add(now);
             }
         } catch (FileNotFoundException fnfe) {
-            throw new DukeException("File cannot be found.");
+            TextUi.show(new DukeException("File cannot be found."));
+        } catch (DukeException de) {
+            TextUi.show(de);
         }
-        return rtn;
+        return new TaskList(rtn);
     }
 
     private Task fileDecoder(String line) throws DukeException {
@@ -34,22 +36,22 @@ public class Storage {
         String first = split[0];
         Task task;
         boolean isDone = checkIsDone(split[1]);
-
-        switch (first) {
-            case ("T"): //Todo Task
-                Todo newTodo = new Todo(isDone, split[2]);
-                task = newTodo;
-                break;
-            case ("D"): //Deadline Task
-                Deadline newDeadline = new Deadline(isDone, split[2], split[3]);
-                task = newDeadline;
-                break;
-            case ("E"): //Event Task
-                Event newEvent = new Event(isDone, split[2], split[3]);
-                task = newEvent;
-                break;
-            default: throw new DukeException("File is corrupt.");
-        }
+            switch (first) {
+                case ("T"): //Todo Task
+                    Todo newTodo = new Todo(isDone, split[2]);
+                    task = newTodo;
+                    break;
+                case ("D"): //Deadline Task
+                    Deadline newDeadline = new Deadline(isDone, split[2], split[3]);
+                    task = newDeadline;
+                    break;
+                case ("E"): //Event Task
+                    Event newEvent = new Event(isDone, split[2], split[3]);
+                    task = newEvent;
+                    break;
+                default: //File cannot be read
+                    throw new DukeException("The file is corrupt!");
+            }
         return task;
     }
 
@@ -57,13 +59,19 @@ public class Storage {
         return num.equals("1"); //returns true if 1 (done)
     }
 
-    public void update(ArrayList<Task> commands) throws IOException {
-        FileWriter fw = new FileWriter(DEFAULT_STORAGE_PATH);
-        String text = "";
-        for (Task now : commands) {
-            text += now.saveTask() + "\n";
+    public void update(TaskList commands) {
+        try {
+            FileWriter fw = new FileWriter(DEFAULT_STORAGE_PATH);
+            String text = "";
+            ArrayList<Task> commandsArrayList = commands.getArrayList();
+            for (Task now : commandsArrayList) {
+                text += now.saveTask() + "\n";
+            }
+            fw.write(text);
+            fw.close();
+        } catch (IOException ioe) {
+            TextUi.show(new DukeException("IOException detected!"));
         }
-        fw.write(text);
-        fw.close();
+
     }
 }
