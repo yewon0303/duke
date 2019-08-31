@@ -39,12 +39,12 @@ public class Task {
 
     //for saving the task into hard disc
     public String saveTask() {
-        return String.format(" | " + isDoneInt(this.isDone) +
-                " | " + this.task);
+        return String.format(" | " + isDoneInt(this.isDone)
+                + " | " + this.task);
     }
 
     @Override
     public String toString() {
-            return String.format(this.displayIsDone() + this.task);
+        return String.format(this.displayIsDone() + this.task);
     }
 }

@@ -26,5 +26,4 @@ public class AddCommand extends Command {
         taskList.add(this.newTask);
         addDone(taskList.getSize());
     }
-
 }

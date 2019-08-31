@@ -49,7 +49,7 @@ public class TaskList {
             this.taskList.add(newTask);
         }
         return new TaskList(this.taskList);
-}
+    }
 
     private boolean doneCheck(String num) {
         //returns true if done (1)
