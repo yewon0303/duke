@@ -4,11 +4,6 @@ import duke.TaskList;
 import duke.command.Command;
 import duke.ui.TextUi;
 
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.io.IOException;
-import java.text.ParseException;
-
 public class Duke {
     private TextUi ui;
     private Storage storage;

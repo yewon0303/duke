@@ -20,8 +20,6 @@ public class Event extends Task {
      * Constructor for Event Task from user input.
      */
     public Event(String[] parsedTask) throws DukeException {
-        //index 0 carry task
-        //index 1 carry date/time
         super("Event", parsedTask[0]); //parent constructor
         this.at = parsedTask[1]; //without "/at "
         try {
