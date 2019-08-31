@@ -1,18 +1,22 @@
 package duke.task;
 
-import duke.ui.DukeException;
-
 public class Task {
     public String type; //Todo, Deadline, Event
     public String task;
     private boolean isDone;
 
+    /**
+     * Constructor for Task from user input.
+     */
     public Task(String type, String task) {
         this.type = type;
         this.task = task;
         this.isDone = false;
     }
 
+    /**
+     * Constructor for Task from hard drive storage.
+     */
     public Task(boolean isDone, String type, String task) {
         this.isDone = isDone;
         this.type = type;
@@ -37,7 +41,12 @@ public class Task {
         return isDone ? "1" : "0";
     }
 
-    //for saving the task into hard disc
+    /**
+     * Saves the Task in the format that can easily be retrieved when the file
+     * is opened next time.
+     *
+     * @return Task decoded into a format suitable for saving on hard disc.
+     */
     public String saveTask() {
         return String.format(" | " + isDoneInt(this.isDone)
                 + " | " + this.task);

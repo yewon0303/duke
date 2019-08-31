@@ -6,8 +6,6 @@ import duke.task.Event;
 import duke.task.Todo;
 import duke.ui.DukeException;
 
-import java.io.*;
-import java.util.Scanner;
 import java.util.ArrayList;
 
 public class TaskList {
@@ -41,7 +39,12 @@ public class TaskList {
         return this.taskList;
     }
 
-    //from txt file to TaskList
+    /**
+     * Decodes an ArrayList of String into a TaskList object.
+     *
+     * @param fullString in ArrayList
+     * @return TaskList
+     */
     public TaskList decodeTaskList(ArrayList<String> fullString) throws DukeException {
         for (String line : fullString) {
             String[] parsed = line.split("|");
@@ -56,6 +59,13 @@ public class TaskList {
         return num.equals("1");
     }
 
+    /**
+     * Decodes the task from an array of String
+     * and translates into a Task object.
+     *
+     * @param parsed lines
+     * @return Task
+     */
     private Task taskDecoder(String[] parsed) throws DukeException {
         String command = parsed[0];
         if (parsed.length < 3) {

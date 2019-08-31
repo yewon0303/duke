@@ -7,6 +7,10 @@ import java.text.Format;
 import java.text.ParseException;
 import java.util.Date;
 
+/**
+ * Task type of Deadline.
+ * Has the property of deadline date and time.
+ */
 public class Deadline extends Task {
     //Task of type Deadline
     //to be done before a specific date/time
@@ -14,6 +18,9 @@ public class Deadline extends Task {
     protected Date date;
     private SimpleDateFormat input = new SimpleDateFormat("dd/MM/yyyy HHmm");
 
+    /**
+     * Constructor for Deadline Task from user input.
+     */
     public Deadline(String[] parsedTask) throws DukeException {
         //index 0 carry task
         //index 1 carry deadline
@@ -26,6 +33,9 @@ public class Deadline extends Task {
         }
     }
 
+    /**
+     * Constructor for Deadline Task from hard drive storage.
+     */
     public Deadline(boolean isDone, String task, String by) throws DukeException {
         super(isDone, "Deadline", task);
         this.by = by;

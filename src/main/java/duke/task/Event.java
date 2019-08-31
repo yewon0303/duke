@@ -7,13 +7,18 @@ import java.text.Format;
 import java.text.ParseException;
 import java.util.Date;
 
+/**
+ * Task type of Event.
+ * Has the property of date and time.
+ */
 public class Event extends Task {
-    //Task of type Event
-    //starts at a specific time and ends at a specific time
     protected String at;
     protected Date date;
     private SimpleDateFormat input = new SimpleDateFormat("dd/MM/yyyy HHmm");
 
+    /**
+     * Constructor for Event Task from user input.
+     */
     public Event(String[] parsedTask) throws DukeException {
         //index 0 carry task
         //index 1 carry date/time
@@ -26,6 +31,9 @@ public class Event extends Task {
         }
     }
 
+    /**
+     * Constructor for Event Task from hard drive storage.
+     */
     public Event(boolean isDone, String task, String at) throws DukeException {
         super(isDone, "Event", task);
         this.at = at;
@@ -36,6 +44,11 @@ public class Event extends Task {
         }
     }
 
+    /**
+     * Prints the date in the format required.
+     *
+     * @return date in dd MMMM yyyy hh.mmaa format
+     */
     public String printDate() {
         Format formatter = new SimpleDateFormat("dd MMMM yyyy hh.mmaa");
         String dateFormatted = formatter.format(this.date);

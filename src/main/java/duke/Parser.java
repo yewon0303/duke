@@ -17,6 +17,13 @@ public class Parser {
     public Parser() {
     }
 
+    /**
+     * Parses the input by user into Command, and other relevant details
+     * such as the deadline, event date, or delete task index.
+     *
+     * @param fullCommand entered by the user
+     * @return Command
+     */
     public Command parse(String fullCommand) {
         String[] split = fullCommand.split(" ");
         String first = split[0];

@@ -9,6 +9,10 @@ public class TextUi {
     public TextUi() {
     }
 
+    /**
+     * Prints the welcome message including the logo, Hello greeting
+     * and the horizontal line before and after.
+     */
     public void greeting() {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -30,8 +34,10 @@ public class TextUi {
         System.out.println(de);
     }
 
+    /**
+     * Prints the farewell message when the user wishes to end the program.
+     */
     public void bye() {
-        //exit when the user types bye
         System.out.println(DIVIDER);
         System.out.println("\tBye. Hope to see you again soon!");
         System.out.println(DIVIDER + NEWLINE);

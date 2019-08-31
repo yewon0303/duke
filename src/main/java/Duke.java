@@ -19,6 +19,9 @@ public class Duke {
         duke.run(args);
     }
 
+    /**
+     * Runs the main method and exits the program once the end is reached.
+     */
     public void run(String[] args) {
         start(args);
         commandHandler();
@@ -32,6 +35,10 @@ public class Duke {
         ui.greeting();
     }
 
+    /**
+     * Handles the commands entered by the user and executes relevant commands
+     * until the end of the program.
+     */
     private void commandHandler() {
         boolean carryOn = true;
         while (carryOn) {

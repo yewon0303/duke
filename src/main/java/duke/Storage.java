@@ -4,12 +4,6 @@ import duke.task.Task;
 import duke.task.Deadline;
 import duke.task.Event;
 import duke.task.Todo;
-import duke.command.Command;
-import duke.command.AddCommand;
-import duke.command.ByeCommand;
-import duke.command.DeleteCommand;
-import duke.command.DoneCommand;
-import duke.command.ListCommand;
 import duke.ui.DukeException;
 import duke.ui.TextUi;
 
@@ -17,18 +11,21 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.FileWriter;
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Storage {
-    //public static final String DEFAULT_STORAGE_PATH = "duke/src/main/java/dukeTaskList.txt";
-    public static final String DEFAULT_STORAGE_PATH = "/Users/Yewon/Documents/NUS/Y2S1/CS2103T/iP/duke/src/main/java/dukeTaskList.txt";
+    public static final String DEFAULT_STORAGE_PATH =
+            "/Users/Yewon/Documents/NUS/Y2S1/CS2103T/iP/duke/src/main/java/dukeTaskList.txt";
+
     public Storage() {
     }
 
+    /**
+     * Loads the existing TaskList from TaskList.txt file on the hard drive.
+     *
+     * @return TaskList
+     */
     public TaskList load() {
         ArrayList<Task> rtn = new ArrayList<>();
         try {
@@ -46,6 +43,12 @@ public class Storage {
         return new TaskList(rtn);
     }
 
+    /**
+     * Decodes the lines saved in TaskList.txt file in the hard drive
+     * and translates them to relevant Task to be saved in TaskList.
+     *
+     * @return Task
+     */
     private Task fileDecoder(String line) throws DukeException {
         String[] split = line.split(" \\| ");
         String first = split[0];
@@ -74,6 +77,10 @@ public class Storage {
         return num.equals("1"); //returns true if 1 (done)
     }
 
+    /**
+     * Updates TaskList.txt file on the hard drive and re-saves the file.
+     * @param commands stored in TaskList
+     */
     public void update(TaskList commands) {
         try {
             FileWriter fw = new FileWriter(DEFAULT_STORAGE_PATH);
