@@ -36,7 +36,7 @@ public class Event extends Task {
         }
     }
 
-    private String printDate() {
+    public String printDate() {
         Format formatter = new SimpleDateFormat("dd MMMM yyyy hh.mmaa");
         String dateFormatted = formatter.format(this.date);
         return dateFormatted;

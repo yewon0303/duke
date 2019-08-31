@@ -27,7 +27,7 @@ public class Task {
         return this.isDone;
     }
 
-    private String displayIsDone() {
+    public String displayIsDone() {
         return this.isDone
                 ? "[" + "\u2713" + "] " //done
                 : "[" + "\u2718" + "] "; //not done

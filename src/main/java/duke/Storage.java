@@ -51,22 +51,22 @@ public class Storage {
         String first = split[0];
         Task task;
         boolean isDone = checkIsDone(split[1]);
-            switch (first) {
-                case ("T"): //Todo Task
-                    Todo newTodo = new Todo(isDone, split[2]);
-                    task = newTodo;
-                    break;
-                case ("D"): //Deadline Task
-                    Deadline newDeadline = new Deadline(isDone, split[2], split[3]);
-                    task = newDeadline;
-                    break;
-                case ("E"): //Event Task
-                    Event newEvent = new Event(isDone, split[2], split[3]);
-                    task = newEvent;
-                    break;
-                default: //File cannot be read
-                    throw new DukeException("The file is corrupt!");
-            }
+        switch (first) {
+        case ("T"): //Todo Task
+            Todo newTodo = new Todo(isDone, split[2]);
+            task = newTodo;
+            break;
+        case ("D"): //Deadline Task
+            Deadline newDeadline = new Deadline(isDone, split[2], split[3]);
+            task = newDeadline;
+            break;
+        case ("E"): //Event Task
+            Event newEvent = new Event(isDone, split[2], split[3]);
+            task = newEvent;
+            break;
+        default: //File cannot be read
+            throw new DukeException("The file is corrupt!");
+        }
         return task;
     }
 
