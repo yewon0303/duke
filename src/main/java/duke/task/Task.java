@@ -37,6 +37,10 @@ public class Task {
                 : "[" + "\u2718" + "] "; //not done
     }
 
+    public String getTask() {
+        return this.task;
+    }
+
     private String isDoneInt(boolean isDone) {
         return isDone ? "1" : "0";
     }

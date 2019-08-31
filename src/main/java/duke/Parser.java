@@ -1,14 +1,9 @@
 package duke;
 
+import duke.command.*;
 import duke.task.Deadline;
 import duke.task.Event;
 import duke.task.Todo;
-import duke.command.Command;
-import duke.command.AddCommand;
-import duke.command.ByeCommand;
-import duke.command.DeleteCommand;
-import duke.command.DoneCommand;
-import duke.command.ListCommand;
 import duke.ui.DukeException;
 
 public class Parser {
@@ -80,6 +75,10 @@ public class Parser {
                         command = new DeleteCommand(wantDelete);
                         break;
                     }
+                case "find": //find all tasks containing keyword
+                    String findingKeyWord = split[1];
+                    command = new FindCommand(findingKeyWord);
+                    break;
                 default:
                     throw new DukeException("I'm sorry, but I don't know what that means :-(");
                 }
