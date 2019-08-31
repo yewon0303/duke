@@ -1,7 +1,5 @@
 package duke.task;
 
-import duke.ui.DukeException;
-
 public class Task {
     public String type; //Todo, Deadline, Event
     public String task;
@@ -37,7 +35,6 @@ public class Task {
         return isDone ? "1" : "0";
     }
 
-    //for saving the task into hard disc
     public String saveTask() {
         return String.format(" | " + isDoneInt(this.isDone)
                 + " | " + this.task);

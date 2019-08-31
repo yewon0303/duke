@@ -8,15 +8,11 @@ import java.text.ParseException;
 import java.util.Date;
 
 public class Event extends Task {
-    //Task of type Event
-    //starts at a specific time and ends at a specific time
     protected String at;
     protected Date date;
     private SimpleDateFormat input = new SimpleDateFormat("dd/MM/yyyy HHmm");
 
     public Event(String[] parsedTask) throws DukeException {
-        //index 0 carry task
-        //index 1 carry date/time
         super("Event", parsedTask[0]); //parent constructor
         this.at = parsedTask[1]; //without "/at "
         try {

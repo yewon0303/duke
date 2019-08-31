@@ -3,8 +3,6 @@ package duke.task;
 import duke.ui.DukeException;
 
 public class Todo extends Task {
-    //Task of type Todo
-    //without any date/time attached to it
 
     public Todo(String task) {
         super("Todo", task);
