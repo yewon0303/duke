@@ -6,8 +6,6 @@ import duke.task.Event;
 import duke.task.Todo;
 import duke.ui.DukeException;
 
-import java.io.*;
-import java.util.Scanner;
 import java.util.ArrayList;
 
 public class TaskList {
