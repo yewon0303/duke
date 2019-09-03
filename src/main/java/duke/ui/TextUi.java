@@ -17,16 +17,18 @@ public class TextUi {
      * Prints the welcome message including the logo, Hello greeting
      * and the horizontal line before and after.
      */
-    public void greeting() {
+    public String greeting() {
+        String rtn = "";
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
                 + "| |_| | |_| |   <  __/\n"
                 + "|____/ \\__,_|_|\\_\\___|\n";
-        System.out.println("Hello from" + NEWLINE + logo);
-        System.out.println(DIVIDER);
-        System.out.println("\tHello! I'm Duke" + NEWLINE + "\tWhat can I do for you?");
-        System.out.println(DIVIDER + NEWLINE);
+        rtn += "Hello from" + NEWLINE + logo
+                + DIVIDER + NEWLINE +"\tHello! I'm Duke" + NEWLINE
+                + NEWLINE + "\tWhat can I do for you?"
+                + "\n" + DIVIDER + NEWLINE;
+        return rtn;
     }
 
     public String readCommand() {
