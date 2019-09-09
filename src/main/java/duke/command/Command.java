@@ -9,7 +9,8 @@ public class Command {
     public Command() {
     }
 
-    public void execute(TaskList taskList) {
+    public String execute(TaskList taskList) {
+        return "";
     }
 
     public boolean getCarryOn() {

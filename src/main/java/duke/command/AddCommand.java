@@ -3,7 +3,6 @@ package duke.command;
 import duke.task.Task;
 import duke.TaskList;
 
-import static duke.ui.TextUi.DIVIDER;
 import static duke.ui.TextUi.NEWLINE;
 
 public class AddCommand extends Command {
@@ -14,16 +13,17 @@ public class AddCommand extends Command {
         this.newTask = newTask;
     }
 
-    private void addDone(int size) {
-        System.out.println(DIVIDER + NEWLINE + "\tGot it. I've added this task: ");
-        System.out.println("\t" + this.newTask);
-        System.out.println("\tNow you have " + size + " tasks in the list.");
-        System.out.println(DIVIDER + NEWLINE);
+    private String addDone(int size) {
+        String rtn = "Got it. I've added this task: "
+                + NEWLINE + this.newTask + NEWLINE
+                + "Now you have " + size + " tasks in the list.";
+        return rtn;
     }
 
     @Override
-    public void execute(TaskList taskList) {
+    public String execute(TaskList taskList) {
         taskList.add(this.newTask);
-        addDone(taskList.getSize());
+        return addDone(taskList.getSize());
+
     }
 }
