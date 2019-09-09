@@ -15,13 +15,12 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 
 public class Duke extends Application {
-    private TextUi ui;
-    private Storage storage;
-    private TaskList taskList;
+    public TextUi ui;
+    public Storage storage;
+    public TaskList taskList;
 
     private ScrollPane scrollPane;
     private VBox dialogContainer;
@@ -32,14 +31,21 @@ public class Duke extends Application {
     private Image user = new Image(this.getClass().getResourceAsStream("/images/olivia.jpg"));
     private Image Duke = new Image(this.getClass().getResourceAsStream("/images/dukeOrsino.png"));
 
+    public Duke() {
+        this.ui = new TextUi();
+        this.storage = new Storage();
+        this.taskList = storage.load();
+    }
+/*
     public static void main(String[] args) {
         Duke duke = new Duke();
         duke.run(args);
-    }
+    }*/
 
     /**
      * Runs the main method and exits the program once the end is reached.
      */
+    /*
     public void run(String[] args) {
         //go(args);
         commandHandler();
@@ -51,12 +57,13 @@ public class Duke extends Application {
         this.storage = new Storage();
         this.taskList = storage.load();
         return ui.greeting();
-    }
+    }*/
 
     /**
      * Handles the commands entered by the user and executes relevant commands
      * until the end of the program.
      */
+    /*
     private void commandHandler() {
         boolean carryOn = true;
         while (carryOn) {
@@ -67,7 +74,7 @@ public class Duke extends Application {
             storage.update(this.taskList);
             carryOn = command.getCarryOn();
         }
-    }
+    }*/
 
     private void exit() {
         ui.bye();
@@ -160,6 +167,7 @@ public class Duke extends Application {
      * Creates two dialog boxes, one echoing user input and the other containing Duke's reply and then appends them to
      * the dialog container. Clears the user input after processing.
      */
+
     private void handleUserInput() {
         Label userText = new Label(userInput.getText());
         Label dukeText = new Label(getResponse(userInput.getText()));
@@ -181,15 +189,19 @@ public class Duke extends Application {
                         new Insets(5, 0, 10, 0))));
 
         dialogContainer.getChildren().addAll(
-                DialogBox.getUserDialog(userText, user),
-                DialogBox.getDukeDialog(dukeText, Duke)
-
+                DialogBox.getUserDialog(userText.toString(), user),
+                DialogBox.getDukeDialog(dukeText.toString(), Duke)
         );
         userInput.clear();
     }
 
-    private String getResponse(String input) {
-        return "Duke heard you:\n " + input;
+    String getResponse(String input) {
+        String nextCommand = input;
+        Parser parser = new Parser();
+        Command command = parser.parse(nextCommand);
+        String rtn = command.execute(this.taskList);
+        this.storage.update(this.taskList);
+        return rtn;
     }
 
 }

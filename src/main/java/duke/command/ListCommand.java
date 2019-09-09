@@ -1,7 +1,6 @@
 package duke.command;
 
 import duke.TaskList;
-import static duke.ui.TextUi.DIVIDER;
 import static duke.ui.TextUi.NEWLINE;
 
 public class ListCommand extends Command {
@@ -12,14 +11,13 @@ public class ListCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList taskList) {
+    public String execute(TaskList taskList) {
+        String rtn = "Here are the tasks in your list:" + NEWLINE;
         this.taskList = taskList;
-        System.out.println(DIVIDER + NEWLINE + "\tHere are the tasks in your list:");
 
         for (int i = 0; i < taskList.getSize(); i++) {
-            System.out.println("\t" + (i + 1) + "." + taskList.get(i));
+            rtn += (i + 1) + "." + taskList.get(i) + NEWLINE;
         }
-
-        System.out.println(DIVIDER);
+        return rtn;
     }
 }

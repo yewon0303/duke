@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class TextUi {
-    public static final String DIVIDER =  "\t____________________________________________________________";
+    public static final String DIVIDER =  "";
     public static final String NEWLINE = "\n";
 
     public TextUi() {
@@ -25,9 +25,7 @@ public class TextUi {
                 + "| |_| | |_| |   <  __/\n"
                 + "|____/ \\__,_|_|\\_\\___|\n";
         rtn += "Hello from" + NEWLINE + logo
-                + DIVIDER + NEWLINE +"\tHello! I'm Duke" + NEWLINE
-                + NEWLINE + "\tWhat can I do for you?"
-                + "\n" + DIVIDER + NEWLINE;
+                + "Hello! I'm Duke" + NEWLINE + "What can I do for you?";
         return rtn;
     }
 
@@ -43,21 +41,18 @@ public class TextUi {
     /**
      * Prints the farewell message when the user wishes to end the program.
      */
-    public static void findCommandPrint(ArrayList<Task> tasks) {
-        System.out.println(DIVIDER);
-        System.out.println("\tHere are the matching tasks in your list:");
+    public static String findCommandPrint(ArrayList<Task> tasks) {
+        String rtn = DIVIDER + NEWLINE + "\tHere are the matching tasks in your list:";
         for (int i = 0; i < tasks.size(); i++) {
-            System.out.println("\t" + (i + 1) + "." + tasks.get(i));
+            rtn +=  (i + 1) + "." + tasks.get(i) + NEWLINE;
         }
         if (tasks.isEmpty()) {
-            System.out.println("\tThere is no task with the keyword in the list.");
+            rtn += "There is no task with the keyword in the list.";
         }
-        System.out.println(DIVIDER + NEWLINE);
+        return rtn;
     }
 
-    public void bye() {
-        System.out.println(DIVIDER);
-        System.out.println("\tBye. Hope to see you again soon!");
-        System.out.println(DIVIDER + NEWLINE);
+    public static String bye() {
+        return "Bye. Hope to see you again soon!";
     }
 }

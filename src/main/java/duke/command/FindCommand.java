@@ -15,7 +15,7 @@ public class FindCommand extends Command {
         this.findKeyword = findKeyword;
     }
 
-    public void execute(TaskList taskList) {
+    public String execute(TaskList taskList) {
         this.taskList = taskList;
         ArrayList<Task> tasks = this.taskList.getArrayList();
         ArrayList<Task> rtnTaskArrayList = new ArrayList<>();
@@ -25,7 +25,7 @@ public class FindCommand extends Command {
                 rtnTaskArrayList.add(task);
             }
         }
-        TextUi.findCommandPrint(rtnTaskArrayList);
+        return TextUi.findCommandPrint(rtnTaskArrayList);
     }
 
 }
