@@ -16,6 +16,7 @@ public class FindCommand extends Command {
     }
 
     public String execute(TaskList taskList) {
+        assert !this.findKeyword.isEmpty() : "The search keyword cannot be empty";
         this.taskList = taskList;
         ArrayList<Task> tasks = this.taskList.getArrayList();
         ArrayList<Task> rtnTaskArrayList = new ArrayList<>();
