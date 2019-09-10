@@ -11,7 +11,7 @@ public class DeleteCommand extends Command {
     private Task deletedTask;
 
     public DeleteCommand(int wantToDelete) {
-        assert wantToDelete > 0 : "the index should not be negative";
+        assert wantToDelete >= 0 : "the index should not be negative";
         super.carryOn = true;
         this.wantToDelete = wantToDelete;
     }
@@ -27,7 +27,8 @@ public class DeleteCommand extends Command {
     @Override
     public String execute(TaskList taskList) {
         try {
-            this.deletedTask = taskList.remove(this.wantToDelete);;
+            this.deletedTask = taskList.remove(this.wantToDelete);
+            taskList.setDeletedTask(this.deletedTask);
             return deleteDone(taskList.getSize());
         } catch (IndexOutOfBoundsException ex) {
             return (new DukeException("The task you want to delete does not exist.")).toString();
