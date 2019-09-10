@@ -4,6 +4,7 @@ import duke.command.*;
 import duke.task.Deadline;
 import duke.task.Event;
 import duke.task.Todo;
+import duke.TaskList;
 import duke.ui.DukeException;
 
 public class Parser {
@@ -25,7 +26,10 @@ public class Parser {
         try {
             if (split.length == 1) {
                 switch (fullCommand) {
-                case "bye": //ByeCommend
+                case "undo": //UndoCommand
+                    command = new UndoCommand();
+                    break;
+                case "bye": //ByeCommand
                     command = new ByeCommand();
                     break;
                 case "list": //ListCommand
@@ -38,6 +42,7 @@ public class Parser {
             } else {
                 switch (first) {
                 case "todo": //create Todo Task
+                    TaskList.addCommand(CommandEnum.Commands.ADD);
                     Todo newTodo = new Todo(fullCommand.substring(5));
                     command = new AddCommand(newTodo);
                     break;
@@ -46,6 +51,7 @@ public class Parser {
                     if (parsedTask.length != 2) {
                         throw new DukeException("Please enter deadline in the format /by [deadline]");
                     } else {
+                        TaskList.addCommand(CommandEnum.Commands.ADD);
                         Deadline newDeadline = new Deadline(parsedTask);
                         command = new AddCommand(newDeadline);
                         break;
@@ -55,6 +61,7 @@ public class Parser {
                     if (parsedTask1.length != 2) {
                         throw new DukeException("Please enter date or time in the format /at [date or time]");
                     } else {
+                        TaskList.addCommand(CommandEnum.Commands.ADD);
                         Event newEvent = new Event(parsedTask1);
                         command = new AddCommand(newEvent);
                         break;
@@ -63,6 +70,7 @@ public class Parser {
                     if (split.length != 2) {
                         throw new DukeException("Please enter in the format done [task index]");
                     } else {
+                        TaskList.addCommand(CommandEnum.Commands.DONE);
                         int doneTask = Integer.parseInt(split[1]) - 1;
                         command = new DoneCommand(doneTask);
                         break;
@@ -71,6 +79,7 @@ public class Parser {
                     if (split.length != 2) {
                         throw new DukeException("Please enter in the format delete [task index]");
                     } else {
+                        TaskList.addCommand(CommandEnum.Commands.DELETE);
                         int wantDelete = Integer.parseInt(split[1]) - 1;
                         command = new DeleteCommand(wantDelete);
                         break;

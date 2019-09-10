@@ -1,12 +1,6 @@
 import java.io.IOException;
 import java.util.Collections;
 
-import duke.Parser;
-import duke.Storage;
-import duke.TaskList;
-import duke.command.Command;
-import duke.ui.TextUi;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -53,10 +47,12 @@ public class DialogBox extends HBox {
     }
 
     public static DialogBox getUserDialog(String text, Image img) {
+        assert !text.isEmpty() : "text should not be empty";
         return new DialogBox(text, img);
     }
 
     public static DialogBox getDukeDialog(String text, Image img) {
+        assert !text.isEmpty() : "text should not be empty";
         var db = new DialogBox(text, img);
         db.flip();
         return db;
