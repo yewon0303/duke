@@ -8,7 +8,7 @@ public class DoneCommand extends Command {
     protected int doneTaskNum;
 
     public DoneCommand(int doneTaskNum) {
-        assert doneTaskNum > 0 : "the index should not be negative";
+        assert doneTaskNum >= 0 : "the index should not be negative";
         super.carryOn = true;
         this.doneTaskNum = doneTaskNum;
     }

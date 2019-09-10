@@ -1,5 +1,7 @@
 package duke;
 
+import duke.command.CommandEnum;
+import duke.command.CommandEnum.Commands;
 import duke.task.Task;
 import duke.task.Deadline;
 import duke.task.Event;
@@ -10,17 +12,25 @@ import java.util.ArrayList;
 
 public class TaskList {
     private final ArrayList<Task> taskList;
+    public static ArrayList<Commands> commands;
+    public static Task deletedTask;
 
     public TaskList() {
         this.taskList = new ArrayList<>();
+        this.commands = new ArrayList<>();
     }
 
     public TaskList(ArrayList<Task> taskList) {
         this.taskList = taskList;
+        this.commands = new ArrayList<>();
     }
 
     public void add(Task newTask) {
         this.taskList.add(newTask);
+    }
+
+    public static void addCommand(Commands command) {
+        commands.add(command);
     }
 
     public Task remove(int wantToRemove) {
@@ -37,6 +47,18 @@ public class TaskList {
 
     public ArrayList<Task> getArrayList() {
         return this.taskList;
+    }
+
+    public Commands getCommand() {
+        return this.commands.get(this.commands.size() - 1);
+    }
+
+    public void setDeletedTask(Task deleted) {
+        deletedTask = deleted;
+    }
+
+    public static Task getDeletedTask() {
+        return deletedTask;
     }
 
     /**

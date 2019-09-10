@@ -27,6 +27,10 @@ public class Task {
         this.isDone = true;
     }
 
+    public void undoMarkDone() {
+        this.isDone = this.isDone && false;
+    }
+
     public boolean checkIsDone() {
         return this.isDone;
     }
