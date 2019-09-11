@@ -1,7 +1,4 @@
-//@Override
 import java.io.IOException;
-
-import duke.ui.TextUi;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +16,6 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            TextUi.greeting();
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/MainWindow.fxml"));
             AnchorPane ap = fxmlLoader.load();
             Scene scene = new Scene(ap);
