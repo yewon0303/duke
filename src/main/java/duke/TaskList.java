@@ -1,6 +1,5 @@
 package duke;
 
-import duke.command.CommandEnum;
 import duke.command.CommandEnum.Commands;
 import duke.task.Task;
 import duke.task.Deadline;
