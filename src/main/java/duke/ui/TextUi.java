@@ -17,7 +17,7 @@ public class TextUi {
      * Prints the welcome message including the logo, Hello greeting
      * and the horizontal line before and after.
      */
-    public String greeting() {
+    public static String greeting() {
         String rtn = "";
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
