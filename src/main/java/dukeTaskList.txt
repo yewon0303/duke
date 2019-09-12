@@ -1,10 +1,2 @@
-<<<<<<< HEAD
-D | 1 | make this work  |  20/09/2019 2359
-E | 1 | dinner with parents  |  21/09/2019 1900
-T | 0 | prepare for cs2101 presentation
-T | 0 | i want to sleep
-=======
-D | 0 | make this work  |  20/09/2019 2359
-E | 1 | dinner with parents  |  21/09/2019 1900
 T | 1 | make this work
->>>>>>> b12775d181d7bb33b399fba480ce3a13a2e1655a
+E | 0 | dinner with parents  |  21/09/2019 1900
