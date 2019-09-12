@@ -9,12 +9,15 @@ public class Duke {
     private Storage storage;
     private TaskList taskList;
 
+    /**
+     * Constructs an instance of Duke with a new TextUi, Storage and TaskList.
+     */
     public Duke() {
         this.ui = new TextUi();
         this.storage = new Storage();
         this.taskList = storage.load();
     }
-  
+
     public String getResponse(String input) {
         String nextCommand = input;
         Parser parser = new Parser();

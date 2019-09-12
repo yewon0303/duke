@@ -15,6 +15,12 @@ public class FindCommand extends Command {
         this.findKeyword = findKeyword;
     }
 
+    /**
+     * Executes the find command and returns all tasks with the given keyword.
+     *
+     * @param taskList current taskList
+     * @return all tasks containing the keyword
+     */
     public String execute(TaskList taskList) {
         assert !this.findKeyword.isEmpty() : "The search keyword cannot be empty";
         this.taskList = taskList;

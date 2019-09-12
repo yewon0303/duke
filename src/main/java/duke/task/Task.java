@@ -35,6 +35,9 @@ public class Task {
         return this.isDone;
     }
 
+    /**
+     * Displays tick or cross based on whether the task is done or not.
+     */
     public String displayIsDone() {
         return this.isDone
                 ? "[" + "\u2713" + "] " //done

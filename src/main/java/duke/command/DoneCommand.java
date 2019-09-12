@@ -7,6 +7,11 @@ import duke.ui.DukeException;
 public class DoneCommand extends Command {
     protected int doneTaskNum;
 
+    /**
+     * Constructs an instance of DoneCommand given the task index to be marked done.
+     *
+     * @param doneTaskNum index of the task to be marked done
+     */
     public DoneCommand(int doneTaskNum) {
         assert doneTaskNum >= 0 : "the index should not be negative";
         super.carryOn = true;

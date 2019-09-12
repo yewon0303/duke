@@ -16,18 +16,18 @@ public class UndoCommand extends Command {
     }
 
     private void undoCommand(Commands lastCommand, int size, TaskList taskList) {
-        switch(lastCommand) {
-            case ADD: //undo = delete
-                new DeleteCommand(size - 1).execute(taskList);
-                break;
-            case DELETE: //undo = add back
-                Task deletedTask = TaskList.getDeletedTask();
-                new AddCommand(deletedTask).execute(taskList);
-                break;
-            case DONE: //undo = undone
-                Task lastTask = taskList.get(size - 1);
-                lastTask.undoMarkDone();
-                break;
+        switch (lastCommand) {
+        case ADD: //undo = delete
+            new DeleteCommand(size - 1).execute(taskList);
+            break;
+        case DELETE: //undo = add back
+            Task deletedTask = TaskList.getDeletedTask();
+            new AddCommand(deletedTask).execute(taskList);
+            break;
+        case DONE: //undo = undone
+            Task lastTask = taskList.get(size - 1);
+            lastTask.undoMarkDone();
+            break;
         }
     }
 

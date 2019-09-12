@@ -10,6 +10,11 @@ public class DeleteCommand extends Command {
     private int wantToDelete;
     private Task deletedTask;
 
+    /**
+     * Constructs an instance of DeleteCommand given the index of task to be deleted.
+     *
+     * @param wantToDelete index of the task to be deleted
+     */
     public DeleteCommand(int wantToDelete) {
         assert wantToDelete >= 0 : "the index should not be negative";
         super.carryOn = true;

@@ -2,7 +2,6 @@ package duke.ui;
 
 import duke.task.Task;
 
-import java.util.Scanner;
 import java.util.ArrayList;
 
 public class TextUi {
@@ -13,18 +12,12 @@ public class TextUi {
     }
 
     /**
-     * Prints the welcome message including the logo, Hello greeting
-     * and the horizontal line before and after.
+     * Prints the welcome message including the Hello greeting.
      */
     public static String greeting() {
         String rtn = "Hello! I'm Duke" + NEWLINE
                 + "Type \"help\" for a list of commands available";
         return rtn;
-    }
-
-    public String readCommand() {
-        Scanner scn = new Scanner(System.in);
-        return scn.nextLine();
     }
 
     public static void show(DukeException de) {
