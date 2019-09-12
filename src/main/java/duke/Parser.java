@@ -44,17 +44,20 @@ public class Parser {
     private Command oneWordCommandParser(String command) throws DukeException {
         Command returnCommand = new Command();
         switch (command) {
-            case "undo":
-                returnCommand = new UndoCommand();
-                break;
-            case "bye":
-                returnCommand = new ByeCommand();
-                break;
-            case "list":
-                returnCommand = new ListCommand();
-                break;
-            default:
-                throw new DukeException("I'm sorry, but I don't know what that means.");
+        case "undo":
+            returnCommand = new UndoCommand();
+            break;
+        case "bye":
+            returnCommand = new ByeCommand();
+            break;
+        case "list":
+            returnCommand = new ListCommand();
+            break;
+        case "help":
+            returnCommand = new HelpCommand();
+            break;
+        default:
+            throw new DukeException("I'm sorry, but I don't know what that means.");
         }
         return returnCommand;
     }

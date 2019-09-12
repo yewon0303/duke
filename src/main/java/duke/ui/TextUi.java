@@ -1,6 +1,5 @@
 package duke.ui;
 
-import duke.TaskList;
 import duke.task.Task;
 
 import java.util.Scanner;
@@ -24,7 +23,8 @@ public class TextUi {
                     + "| | | | | | | |/ / _ \\\n"
                     + "| |_| | |_| |   <  __/\n"
                     + "|____/ \\__,_|_|\\_\\___|\n";
-        rtn += logo + "Hello! I'm Duke" + NEWLINE + "Type \"list\" to see your list of tasks";
+        rtn += "Hello! I'm Duke" + NEWLINE
+                + "Type \"help\" for a list of commands available";
         return rtn;
     }
 
