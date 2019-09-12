@@ -1,3 +1,4 @@
-D | 0 | make this work  |  20/09/2019 2359
-E | 1 | dinner with parents  |  21/09/2019 1900
 T | 1 | make this work
+E | 0 | dinner with parents  |  21/09/2019 1900
+D | 0 | finish this  |  08/09/2019 1800
+T | 0 | finish this up asap
