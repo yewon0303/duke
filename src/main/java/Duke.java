@@ -15,13 +15,17 @@ public class Duke {
         this.taskList = storage.load();
     }
   
-    String getResponse(String input) {
+    public String getResponse(String input) {
         String nextCommand = input;
         Parser parser = new Parser();
         Command command = parser.parse(nextCommand);
         String rtn = command.execute(this.taskList);
         this.storage.update(this.taskList);
         return rtn;
+    }
+
+    public String greeting() {
+        return this.ui.greeting();
     }
 
 }

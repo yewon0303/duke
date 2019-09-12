@@ -20,12 +20,11 @@ public class TextUi {
     public static String greeting() {
         String rtn = "";
         String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
-        rtn += "Hello from" + NEWLINE + logo
-                + "Hello! I'm Duke" + NEWLINE + "What can I do for you?";
+                    + "|  _ \\ _   _| | _____ \n"
+                    + "| | | | | | | |/ / _ \\\n"
+                    + "| |_| | |_| |   <  __/\n"
+                    + "|____/ \\__,_|_|\\_\\___|\n";
+        rtn += logo + "Hello! I'm Duke" + NEWLINE + "Type \"list\" to see your list of tasks";
         return rtn;
     }
 
