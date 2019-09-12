@@ -17,13 +17,7 @@ public class TextUi {
      * and the horizontal line before and after.
      */
     public static String greeting() {
-        String rtn = "";
-        String logo = " ____        _        \n"
-                    + "|  _ \\ _   _| | _____ \n"
-                    + "| | | | | | | |/ / _ \\\n"
-                    + "| |_| | |_| |   <  __/\n"
-                    + "|____/ \\__,_|_|\\_\\___|\n";
-        rtn += "Hello! I'm Duke" + NEWLINE
+        String rtn = "Hello! I'm Duke" + NEWLINE
                 + "Type \"help\" for a list of commands available";
         return rtn;
     }
