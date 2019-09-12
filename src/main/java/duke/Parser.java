@@ -143,7 +143,7 @@ public class Parser {
             case "event": //Event Task
                 String[] parsedTask1 = fullCommand.substring(6).split("/at");
                 if (parsedTask1.length != 2) {
-                    throw new DukeException("Please enter details in the format /at [date or time]");
+                    throw new DukeException("Please enter date or time in the format /at [date or time]");
                 } else {
                     TaskList.addCommand(CommandEnum.Commands.ADD);
                     Event newEvent = new Event(parsedTask1);

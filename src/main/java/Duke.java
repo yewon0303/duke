@@ -14,7 +14,7 @@ public class Duke {
         this.storage = new Storage();
         this.taskList = storage.load();
     }
-
+  
     String getResponse(String input) {
         String nextCommand = input;
         Parser parser = new Parser();
