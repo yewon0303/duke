@@ -16,7 +16,7 @@ public class AddCommand extends Command {
     private String addDone(int size) {
         String rtn = "Got it. I've added this task: "
                 + NEWLINE + this.newTask + NEWLINE
-                + "Now you have " + size + " tasks in the list.";
+                + "Now thee have " + size + " tasks in the list.";
         return rtn;
     }
 

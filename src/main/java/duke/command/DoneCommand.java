@@ -30,7 +30,7 @@ public class DoneCommand extends Command {
             doneTask.markIsDone();
             return doneDone(doneTask);
         } catch (IndexOutOfBoundsException ex) {
-            return (new DukeException("The task you want to mark done does not exist.")).toString();
+            return (new DukeException("The task thee want to mark done does not exist.")).toString();
         }
     }
 }

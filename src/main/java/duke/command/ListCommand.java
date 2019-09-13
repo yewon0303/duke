@@ -13,7 +13,7 @@ public class ListCommand extends Command {
     @Override
     public String execute(TaskList taskList) {
         String rtn = "Here are the " + taskList.getSize()
-                + " tasks in your list:" + NEWLINE;
+                + " tasks in thou list:" + NEWLINE;
         this.taskList = taskList;
 
         for (int i = 0; i < taskList.getSize(); i++) {

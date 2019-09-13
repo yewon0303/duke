@@ -15,7 +15,8 @@ public class TextUi {
      * Prints the welcome message including the Hello greeting.
      */
     public static String greeting() {
-        String rtn = "Hello! I'm Duke" + NEWLINE
+        String rtn = "Viola, if music be the food of love, play on." + NEWLINE
+                + "I am Duke Orsino." + NEWLINE
                 + "Type \"help\" for a list of commands available";
         return rtn;
     }
@@ -28,7 +29,7 @@ public class TextUi {
      * Prints the farewell message when the user wishes to end the program.
      */
     public static String findCommandPrint(ArrayList<Task> tasks) {
-        String rtn = DIVIDER + NEWLINE + "\tHere are the matching tasks in your list:";
+        String rtn = DIVIDER + NEWLINE + "\tHere are the matching tasks in thou list:";
         for (int i = 0; i < tasks.size(); i++) {
             rtn +=  (i + 1) + "." + tasks.get(i) + NEWLINE;
         }
@@ -39,6 +40,6 @@ public class TextUi {
     }
 
     public static String bye() {
-        return "Bye. Hope to see you again soon!";
+        return "Bye. Hope to see thee again soon!";
     }
 }

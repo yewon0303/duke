@@ -25,7 +25,7 @@ public class DeleteCommand extends Command {
         assert size >= 0 : "size of taskList cannot be negative";
         String rtn = "Noted. I've removed this task: "
                 + NEWLINE + this.deletedTask + NEWLINE
-                + "Now you have " + size + " tasks in the list.";
+                + "Now thee have " + size + " tasks in the list.";
         return rtn;
     }
 
@@ -36,7 +36,7 @@ public class DeleteCommand extends Command {
             taskList.setDeletedTask(this.deletedTask);
             return deleteDone(taskList.getSize());
         } catch (IndexOutOfBoundsException ex) {
-            return (new DukeException("The task you want to delete does not exist.")).toString();
+            return (new DukeException("The task thee want to delete does not exist.")).toString();
         }
     }
 }
