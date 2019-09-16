@@ -1,5 +1,6 @@
 # Duke Orsino 
-##Personal Tasklist Manager
+Personal Tasklist Manager
+
 
 # User Guide
 Personal tasklist manager aimed at organising the current tasks 
@@ -10,7 +11,10 @@ You are Viola giving commands to Duke Orsino, who will
 respond to your commands. 
 
 Screenshot:
-![Ui.png](/Ui.png)
+
+![Ui.png](Ui.png)
+
+
 
 ## 1. Setting up
 
@@ -23,6 +27,8 @@ Screenshot:
     2. Double-clicking on the jar file OR
     2. Typing `java -jar duke-0.1.3.jar` on Command Line Interface
 
+
+
 ## 2. Usage
 
 ### 2.1 Features
@@ -31,12 +37,15 @@ Screenshot:
 
 Task type | Details required
 ------------ | -------------
-`Deadline` | Task detail, date and time of deadline
-`Event` | Task detail, date and time of event
-`Todo` | Task detail
+_Deadline_ | Task detail, date and time of deadline
+_Event_ | Task detail, date and time of event
+_Todo_ | Task detail
+
+
 
 ### 2.2 Commands 
 * Type command into the textbox and click `send` to request action from Duke Orsino
+
 
 #### 2.2.1 Exiting the program: `bye`
 #### Quits the program.
@@ -45,6 +54,8 @@ Task type | Details required
 ``` 
         Bye. Hope to see thee again soon!
 ```
+
+
 
 #### 2.2.2 Deleting a task: `delete`
 #### Delete the specified task from the list.
@@ -57,6 +68,8 @@ Task type | Details required
         Now thee have 3 tasks in the list.
 ```
 
+
+
 #### 2.2.3 Marking a task done: `done`
 #### Marks a specified `undone [x]` task `done [✓]`.
 #### Format: `done INDEX`
@@ -66,6 +79,8 @@ Task type | Details required
         Nice! I've marked this task as done:
         [D][✓] CS2105 assignment 1 (by 02 October 2019 11.59PM)
 ```
+
+
 
 #### 2.2.4 Finding a task with given keyword: `find`
 #### Finds all tasks in the list with the keyword provided.
@@ -77,6 +92,8 @@ Task type | Details required
         1. [T][✓] call Benedict
         2. [T][x] call Ryan
 ```
+
+
 
 #### 2.2.5 Listing all tasks: `list`
 #### Lists all tasks in the list.
@@ -91,6 +108,8 @@ Task type | Details required
         4. [T][x] buy birthday present for Benedict
 ```
 
+
+
 #### 2.2.6 Undoing the latest undoable command: `undo`
 #### Undoes the latest undoable command. 
 #### Undoable commands include all add Task commands (`deadline`, `event`, `todo`), delete and done
@@ -101,6 +120,8 @@ Task type | Details required
         Nice! Undone successful.
 ```
 
+
+
 #### 2.2.7 Viewing a task: `view`
 #### Shows just the specified task.
 #### Format: `view INDEX`
@@ -109,6 +130,8 @@ Task type | Details required
 ``` 
         3. [D][x] CS2105 assignment 1 (by: 02 October 2019 11.59PM)
 ```
+
+
 
 #### 2.2.8 Adding a Deadline task: `deadline`
 #### Adds a task with type `deadline` to the list.
@@ -121,6 +144,8 @@ Task type | Details required
         Now thee have 5 tasks in thou list.
 ```
 
+
+
 #### 2.2.9 Adding an Event task: `event`
 #### Adds a task with type `event` to the list.
 #### Format: `event TASK /at DD/MM/YY HHMM`
@@ -132,6 +157,8 @@ Task type | Details required
         Now thee have 5 tasks in thou list.
 ```
 
+
+
 #### 2.2.10 Adding a Todo task: `todo`
 #### Adds a task with type `todo` to the list.
 #### Format: `todo TASK`
@@ -142,6 +169,8 @@ Task type | Details required
         [T][x] print lecture slides
         Now thee have 5 tasks in thou list.
 ```
+
+
 
 ## 3. Command summary
 * Bye: `bye`
