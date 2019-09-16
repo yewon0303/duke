@@ -8,7 +8,7 @@ You are Viola giving commands to Duke Orsino, who will
 respond to your commands. 
 
 Screenshot:
-![Ui.png](/docs/Ui.png)
+![Ui.png](/Ui.png)
 
 ## 1. Setting up
 
@@ -40,7 +40,7 @@ Task type | Details required
 ##### Quits the program.
 ##### Format: `bye` 
 ##### Expected outcome: 
-``` java
+``` 
         Bye. Hope to see thee again soon!
 ```
 
@@ -49,7 +49,7 @@ Task type | Details required
 ##### Format: `delete INDEX`
 ##### Examples: `delete 2` deletes the 2nd task from the list
 ##### Expected outcome: 
-``` java
+``` 
         Noted. I've removed this task:
         [T][x] Prepare for CS2101 presentation
         Now thee have 3 tasks in the list.
@@ -60,7 +60,7 @@ Task type | Details required
 ##### Format: `done INDEX`
 ##### Examples: `done 1` marks 1st task from the list done
 ##### Expected outcome: 
-``` java
+``` 
         Nice! I've marked this task as done:
         [D][✓] CS2105 assignment 1 (by 02 October 2019 11.59PM)
 ```
@@ -70,7 +70,7 @@ Task type | Details required
 ##### Format: `find KEYWORD`
 ##### Examples: `find call` finds all tasks from the list containing the word call
 ##### Expected outcome: 
-``` java
+``` 
         Here are the matching tasks in thou list:
         1. [T][✓] call Benedict
         2. [T][x] call Ryan
@@ -81,7 +81,7 @@ Task type | Details required
 ##### Format: `list`
 ##### Examples: `list` lists all tasks from the list
 ##### Expected outcome: 
-``` java
+``` 
         Here are the 4 tasks in thou list:
         1. [E][✓] dinner with parents (at: 21 September 2019 07.00PM)
         2. [T][x] call Ryan
@@ -95,7 +95,7 @@ Task type | Details required
 ##### Format: `undo`
 ##### Examples: `delete 2` > `undo` marks task adds back the deleted task back into the list
 ##### Expected outcome: 
-``` java
+``` 
         Nice! Undone successful.
 ```
 
@@ -104,7 +104,7 @@ Task type | Details required
 ##### Format: `view INDEX`
 ##### Examples: `view 3` shows the 3rd task in the list
 ##### Expected outcome: 
-``` java
+``` 
         3. [D][x] CS2105 assignment 1 (by: 02 October 2019 11.59PM)
 ```
 
@@ -113,7 +113,7 @@ Task type | Details required
 ##### Format: `deadline TASK /by DD/MM/YY HHMM`
 ##### Examples: `deadline CS2101 peer review /by 02/10/2019 2359` adds a `deadline` task
 ##### Expected outcome: 
-``` java
+``` 
         Got it. I've added this task:
         [D][x] CS2101 peer review (by: 02 October 2019 11.59PM)
         Now thee have 5 tasks in thou list.
@@ -124,7 +124,7 @@ Task type | Details required
 ##### Format: `event TASK /at DD/MM/YY HHMM`
 ##### Examples: `event CS2103T team meeting /at 20/09/2019 1600` adds an `event` task
 ##### Expected outcome: 
-``` java
+``` 
         Got it. I've added this task:
         [E][x] CS2103T team meeting (at: 20 September 2019 04.00PM)
         Now thee have 5 tasks in thou list.
@@ -135,7 +135,7 @@ Task type | Details required
 ##### Format: `todo TASK`
 ##### Examples: `todo print lecture slides` adds a `todo` task
 ##### Expected outcome: 
-``` java
+``` 
         Got it. I've added this task:
         [T][x] print lecture slides
         Now thee have 5 tasks in thou list.
