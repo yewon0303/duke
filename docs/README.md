@@ -47,7 +47,7 @@ _Todo_ | Task detail
 * Type command into the textbox and click `send` to request action from Duke Orsino
 
 
-#### 2.2.1 Exiting the program: `bye`
+**2.2.1 Exiting the program: `bye`**
 #### Quits the program.
 #### Format: `bye` 
 #### Expected outcome: 
@@ -57,7 +57,7 @@ _Todo_ | Task detail
 
 
 
-#### 2.2.2 Deleting a task: `delete`
+**2.2.2 Deleting a task: `delete`**
 #### Delete the specified task from the list.
 #### Format: `delete INDEX`
 #### Examples: `delete 2` deletes the 2nd task from the list
@@ -70,7 +70,7 @@ _Todo_ | Task detail
 
 
 
-#### 2.2.3 Marking a task done: `done`
+**2.2.3 Marking a task done: `done`**
 #### Marks a specified `undone [x]` task `done [✓]`.
 #### Format: `done INDEX`
 #### Examples: `done 1` marks 1st task from the list done
@@ -82,7 +82,7 @@ _Todo_ | Task detail
 
 
 
-#### 2.2.4 Finding a task with given keyword: `find`
+**2.2.4 Finding a task with given keyword: `find`**
 #### Finds all tasks in the list with the keyword provided.
 #### Format: `find KEYWORD`
 #### Examples: `find call` finds all tasks from the list containing the word call
@@ -95,7 +95,7 @@ _Todo_ | Task detail
 
 
 
-#### 2.2.5 Listing all tasks: `list`
+**2.2.5 Listing all tasks: `list`**
 #### Lists all tasks in the list.
 #### Format: `list`
 #### Examples: `list` lists all tasks from the list
@@ -110,7 +110,7 @@ _Todo_ | Task detail
 
 
 
-#### 2.2.6 Undoing the latest undoable command: `undo`
+**2.2.6 Undoing the latest undoable command: `undo`**
 #### Undoes the latest undoable command. 
 #### Undoable commands include all add Task commands (`deadline`, `event`, `todo`), delete and done
 #### Format: `undo`
@@ -122,7 +122,7 @@ _Todo_ | Task detail
 
 
 
-#### 2.2.7 Viewing a task: `view`
+**2.2.7 Viewing a task: `view`**
 #### Shows just the specified task.
 #### Format: `view INDEX`
 #### Examples: `view 3` shows the 3rd task in the list
@@ -133,7 +133,7 @@ _Todo_ | Task detail
 
 
 
-#### 2.2.8 Adding a Deadline task: `deadline`
+**2.2.8 Adding a Deadline task: `deadline`**
 #### Adds a task with type `deadline` to the list.
 #### Format: `deadline TASK /by DD/MM/YY HHMM`
 #### Examples: `deadline CS2101 peer review /by 02/10/2019 2359` adds a `deadline` task
@@ -146,7 +146,7 @@ _Todo_ | Task detail
 
 
 
-#### 2.2.9 Adding an Event task: `event`
+**2.2.9 Adding an Event task: `event`**
 #### Adds a task with type `event` to the list.
 #### Format: `event TASK /at DD/MM/YY HHMM`
 #### Examples: `event CS2103T team meeting /at 20/09/2019 1600` adds an `event` task
@@ -159,7 +159,7 @@ _Todo_ | Task detail
 
 
 
-#### 2.2.10 Adding a Todo task: `todo`
+**2.2.10 Adding a Todo task: `todo`**
 #### Adds a task with type `todo` to the list.
 #### Format: `todo TASK`
 #### Examples: `todo print lecture slides` adds a `todo` task
