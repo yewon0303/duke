@@ -1,5 +1,4 @@
 E | 1 | dinner with parents  |  21/09/2019 1900
 D | 1 | cs2105 assignment 1  |  2/10/2019 2359
 T | 0 | call Benedict 
-T | 0 | call Ryan
 D | 0 | cs2101 peer review  |  02/10/2019 2359
