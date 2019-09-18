@@ -25,8 +25,8 @@ public class UndoCommand extends Command {
             new AddCommand(deletedTask).execute(taskList);
             break;
         case DONE: //undo = undone
-            Task lastTask = taskList.get(size - 1);
-            lastTask.undoMarkDone();
+            Task doneTask = taskList.getDoneTask();
+            doneTask.undoMarkDone();
             break;
         }
     }

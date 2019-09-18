@@ -13,6 +13,7 @@ public class TaskList {
     private final ArrayList<Task> taskList;
     public static ArrayList<Commands> commands;
     public static Task deletedTask;
+    public static Task doneTask;
 
     public TaskList() {
         this.taskList = new ArrayList<>();
@@ -58,6 +59,14 @@ public class TaskList {
 
     public static Task getDeletedTask() {
         return deletedTask;
+    }
+
+    public void setDoneTask(Task done) {
+        doneTask = done;
+    }
+
+    public static Task getDoneTask() {
+        return doneTask;
     }
 
     /**

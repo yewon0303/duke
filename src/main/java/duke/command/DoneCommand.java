@@ -6,6 +6,7 @@ import duke.ui.DukeException;
 
 public class DoneCommand extends Command {
     protected int doneTaskNum;
+    private Task doneTask;
 
     /**
      * Constructs an instance of DoneCommand given the task index to be marked done.
@@ -26,8 +27,9 @@ public class DoneCommand extends Command {
     @Override
     public String execute(TaskList taskList) {
         try {
-            Task doneTask = taskList.get(this.doneTaskNum);
+            this.doneTask = taskList.get(this.doneTaskNum);
             doneTask.markIsDone();
+            taskList.setDoneTask(doneTask);
             return doneDone(doneTask);
         } catch (IndexOutOfBoundsException ex) {
             return (new DukeException("The task thee want to mark done does not exist.")).toString();
