@@ -5,6 +5,8 @@ import duke.task.Deadline;
 import duke.task.Event;
 import duke.task.Todo;
 import duke.ui.DukeException;
+import javafx.animation.PauseTransition;
+import javafx.util.Duration;
 
 public class Parser {
 
@@ -48,7 +50,7 @@ public class Parser {
             break;
         case "bye":
             returnCommand = new ByeCommand();
-            break;
+            System.exit(0);
         case "list":
             returnCommand = new ListCommand();
             break;
