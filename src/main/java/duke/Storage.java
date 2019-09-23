@@ -15,8 +15,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Storage {
-    public static final String DEFAULT_STORAGE_PATH =
-            "/Users/Yewon/Documents/NUS/Y2S1/CS2103T/iP/duke/src/main/java/dukeTaskList.txt";
+    public static final String DEFAULT_STORAGE_PATH = "../dukeTaskList.txt";
 
     public Storage() {
     }
