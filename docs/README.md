@@ -24,7 +24,7 @@ Screenshot:
 
 **Running Duke Orsino**
 1. Download `duke-0.5.jar` file from `duke` > `build` > `libs` 
-    or [here](https://github.com/yewon0303/duke/releases/tag/0.5) 
+    or [here](https://github.com/yewon0303/duke/releases/tag/v0.5) 
 1. Open the jar file by
     2. Double-clicking on the jar file OR
     2. Typing `java -jar duke-0.5.jar` on Command Line Interface
