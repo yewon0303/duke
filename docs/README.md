@@ -23,11 +23,11 @@ Screenshot:
 * Java Runtime Environment
 
 **Running Duke Orsino**
-1. Download `duke-0.1.3.jar` file from `duke` > `build` > `libs` 
-    or [here](https://github.com/yewon0303/duke/releases/tag/v0.3.1) 
+1. Download `duke-0.4.jar` file from `duke` > `build` > `libs` 
+    or [here](https://github.com/yewon0303/duke/releases/tag/0.5) 
 1. Open the jar file by
     2. Double-clicking on the jar file OR
-    2. Typing `java -jar duke-0.1.3.jar` on Command Line Interface
+    2. Typing `java -jar duke-0.5.jar` on Command Line Interface
 
 <br/>
 
